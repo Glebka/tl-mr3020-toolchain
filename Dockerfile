@@ -9,6 +9,8 @@ RUN mkdir /openwrt
 RUN git clone git://git.openwrt.org/15.05/openwrt.git /openwrt
 RUN cd /openwrt && make defconfig
 ADD tl-mr3020.cfg /openwrt/.config
+ADD build.sh /openwrt/build.sh
+RUN chmod +x /openwrt/build.sh
 VOLUME /openwrt
 #EXPOSE 22
 #CMD ["/usr/sbin/sshd", "-D"]
