@@ -7,4 +7,4 @@ before_install:
   - docker build -t tl-mr3020-toolchain .
   
 script:
-  - docker run --rm -t -i tl-mr3020-toolchain /bin/sh -c "cd /openwrt; ./build.sh"
+  - docker run --rm -t -i tl-mr3020-toolchain /bin/sh -c "cd /openwrt; FORCE_UNSAFE_CONFIGURE=1 make toolchain -j4"
