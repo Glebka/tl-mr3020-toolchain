@@ -35,7 +35,7 @@ PING_LOOP_PID=$!
 # your_build_command_1 >> $BUILD_OUTPUT 2>&1
 # your_build_command_2 >> $BUILD_OUTPUT 2>&1
 export FORCE_UNSAFE_CONFIGURE=1
-make -j4 >> $BUILD_OUTPUT 2>&1
+make toolchain/install -j1 V=s >> $BUILD_OUTPUT 2>&1
 
 # The build finished without returning an error so dump a tail of the output
 dump_output
